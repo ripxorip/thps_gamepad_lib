@@ -6,11 +6,15 @@ import keyboard
 import time
 
 # Find the Gamepad
+input_dev = None
 devices = [evdev.InputDevice(path) for path in evdev.list_devices()]
 for device in devices:
     if 'Nintendo Switch Pro Controller' == device.name:
         input_dev = device.path
 
+if input_dev == None:
+    print('Error: Connect pro controller')
+    exit(-1)
 
 pos_thresh = 20000
 neg_thresh = -pos_thresh
