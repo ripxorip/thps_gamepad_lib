@@ -5,7 +5,7 @@ import keyboard
 
 import time
 
-# Find the trackball
+# Find the Gamepad
 devices = [evdev.InputDevice(path) for path in evdev.list_devices()]
 for device in devices:
     if 'Nintendo Switch Pro Controller' == device.name:
